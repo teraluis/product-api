@@ -2,35 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc9d024-cb16-4a1c-a97d-9729ed8220e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/generateJWT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/mailValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/passwordValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/roleValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/userValidate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/validateJWT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/ListNode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/Node.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/validFields.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/auth/controller/loginController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/auth/routes/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/category/model/Categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/products/controllers/ProductsController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/products/model/Products.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/products/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/roles/models/roles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/users/controllers/UserController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/users/models/usuario.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/users/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/users/services/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-old.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/mailValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/mailValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/roleValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/roleValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/userValidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/userValidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/validateJWT.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/validateJWT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/auth/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/auth/controller/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/category/model/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/category/model/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/products/controllers/ProductsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/products/controllers/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/products/model/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/products/model/ProductModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/products/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/products/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/users/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/users/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/users/models/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/users/models/userModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/users/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/users/routes/userRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/users/services/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/users/services/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +109,7 @@
       <workItem from="1612868828541" duration="7771000" />
       <workItem from="1613222083906" duration="15788000" />
       <workItem from="1613583087132" duration="19000" />
-      <workItem from="1613583134111" duration="44978000" />
+      <workItem from="1613583134111" duration="60699000" />
     </task>
     <servers />
   </component>

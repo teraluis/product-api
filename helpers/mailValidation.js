@@ -1,4 +1,4 @@
-const User = require('../modules/users/models/usuario');
+const User = require('../modules/users/models/userModel');
 
 const unique = async (email = '') => {
     const exits = await User.findOne({email});

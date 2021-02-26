@@ -1,4 +1,6 @@
-const User = require('../models/usuario');
+const User = require('../models/userModel');
+const Product = require('../../products/model/ProductModel.js');
+
 const Password =  require('../../../helpers/passwordValidation');
 
 const _ = require('underscore');
@@ -11,8 +13,14 @@ class UserController {
         return res.json({user});
      };
 
+    getByName =  async (req, res) => {
+        const {name} = req.params;
+        const user = await User.find({name: name, state: true}).exec();
+        return res.json({user});
+    };
+
      getAllUsers = async (req, res) => {
-         const {from = 0, limit = 5} = req.query
+         const {from = 0, limit = 5} = req.query;
          const [count, users] = await Promise.all([
              User.countDocuments({state: true}),
              User.find({state: true}, 'name email role').skip(Number(from))
@@ -27,7 +35,7 @@ class UserController {
         const user = new User({name, email, password, role, state});
         user.password = Password.cryptPassword(password);
         await user.save();
-        return res.json({user});
+        return res.json(user);
     };
 
     updateUser = async (req, res) => {
@@ -42,52 +50,28 @@ class UserController {
 
     deleteUser = async (req, res) => {
         const body = { state: false };
-        const user = await User.findByIdAndUpdate(req.params.id, body, {new: true});
+        const {id} = req.params;
+        const user = await User.findByIdAndUpdate(id, body, {new: true});
         return res.json({msg: `${user.name} was removed` })
     };
 
-    removeUser = async (req, res) => {
+    userHistory = async (req, res) => {
+        const {id} = req.params;
+        const history = Product.findById(id).populate('users').exec();
+        return res.json({history})
+    };
+
+    realRemoveUser = async (req, res) => {
         const {id} = req.params;
         const user = await User.findByIdAndRemove(id);
-        return res.json({user});
+        return res.json(user);
     };
     anonymiseUser = async (req, res) => {
         const anonymusMail = Password.cryptPassword(req.body.email)+'@anonym.com';
         const body = { state: false, name: '-', email: anonymusMail};
         const user = await User.findByIdAndUpdate(req.params.id, body, {new: true});
         return res.json({msg: `${user.name} was removed` })
-    }
-
-    twoSumm = (req, res) => {
-         const {nums, target} = req.body;
-         let somme = 0;
-         let indices = [];
-         let found = false;
-         for(let i = 0; i < nums.length - 1; i++) {
-             if(!found) {
-                 somme = nums[i];
-                 indices = [i];
-                 for(let j = i+1; j < nums.length; j++) {
-                     if(!found) {
-                         somme += nums[j];
-                         console.log(`somme === target : ${somme}  ===   ${target}`);
-                         indices.push(j);
-                         if(somme === target) {
-                             found = true;
-                             somme = -1;
-                         }
-                     }
-                 }
-             }
-         }
-         if(!found) {
-             indices = [];
-         }
-        res.json({
-            indicesTableau: indices
-        })
-    }
-
+    };
 
 }
 

@@ -29,6 +29,7 @@ app.get('/user',validateJWT.validateToken, UsersController.getAllUsers);
 app.post('/user',
     validateJWT.validateToken,
     [
+        Role.hasRole('MARKETING_ROLE','VENDOR_ROLE'),
         check('email', 'must be mail').isEmail(),
         check('role').custom((r) => Role.isValidRole(r)),
         check('email').custom((m) => Mail.unique(m)),
@@ -47,8 +48,9 @@ app.put('/user/:id',
     UsersController.updateUser);
 
 app.delete('/user/:id',
-    validateJWT.validateToken,
     [
+        validateJWT.validateToken,
+        Role.isAdmin,
         check('id','invalid id').isMongoId(),
         check('id').custom( (id) => UserValidation.exits(id)),
         validateFields

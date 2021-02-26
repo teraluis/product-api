@@ -1,19 +1,25 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
-const {Category} = require('../../category/model/Categories');
 let Schema = mongoose.Schema;
 
-let ProductsSchema = new Schema({
+let ProductSchema = new Schema({
     name: {
         type: String,
+        unique: true,
         required: [true, 'name is mandatory']
     },
+    description: {
+        type: String
+    },
+    img: {
+        type: String
+    },
     price: {
-        type: Float64Array,
+        type: Number,
         required: [true, 'price is mandatory']
     },
     category: {
-        type: Category.ObjectId,
+        type: String,
         required: [true, 'category is mandatory'],
         enum: ['Optic', 'Solaire','Hybride', 'Goodies']
     },
@@ -24,7 +30,15 @@ let ProductsSchema = new Schema({
     visible: {
         type: Boolean,
         required: true
-    }
+    },
+    users: {type: Schema.Types.ObjectId, ref: "User"}
 });
 
-module.exports = mongoose.model('Product', ProductsSchema);
+ProductSchema.toJSON = function () {
+    const { __v, _id, ...product} = this.toObject();
+    product.id = _id;
+    return product
+};
+
+ProductSchema.plugin(uniqueValidator, { message: '{PATH} must be unique' });
+module.exports = mongoose.model('Product', ProductSchema);
