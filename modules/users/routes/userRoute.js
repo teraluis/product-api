@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 
 const UsersController = require('../controllers/UserController');
@@ -13,7 +14,6 @@ const Mail = require('../../../helpers/mailValidation');
 
 const { check } = require('express-validator');
 
-
 const {validateFields} = require('../../../middlewares/validFields');
 
 app.get('/user/:id',validateJWT.validateToken,
@@ -24,12 +24,10 @@ app.get('/user/:id',validateJWT.validateToken,
     ],
     UsersController.getById);
 
-app.get('/user',validateJWT.validateToken, UsersController.getAllUsers);
+app.get('/user', UsersController.getAllUsers);
 
 app.post('/user',
-    validateJWT.validateToken,
     [
-        Role.hasRole('MARKETING_ROLE','VENDOR_ROLE'),
         check('email', 'must be mail').isEmail(),
         check('role').custom((r) => Role.isValidRole(r)),
         check('email').custom((m) => Mail.unique(m)),

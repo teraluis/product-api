@@ -31,8 +31,8 @@ class UserController {
     };
 
     addUser = async (req, res) => {
-        const {name, email, password, role, state} = req.body;
-        const user = new User({name, email, password, role, state});
+        const {name, email, password, role, state, country, gender} = req.body;
+        const user = new User(req.body);
         user.password = Password.cryptPassword(password);
         await user.save();
         return res.json(user);

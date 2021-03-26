@@ -32,6 +32,14 @@ let UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    country: {
+        type: String,
+        required: false
+    },
+    gender: {
+        type: String,
+        required: false
+    },
     user: { type: Schema.Types.ObjectId, ref: "Product"}
 });
 

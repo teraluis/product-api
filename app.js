@@ -13,6 +13,7 @@ app.use(cors('*'));
 // parse application/json
 app.use(bodyParser.json());
 app.use(require('./modules/users/routes/userRoute'));
+app.use(require('./modules/roles/routes/rolesRoutes'));
 app.use(require('./modules/auth/routes/auth'));
 const opts = {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: true};
 mongoose.connect('mongodb://localhost:27017/cafe',opts,(err, res) => {
